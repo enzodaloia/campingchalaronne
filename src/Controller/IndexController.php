@@ -8,19 +8,19 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class IndexController extends AbstractController
 {
-    // #[Route('/', name: 'app_index')]
-    // public function index(): Response
-    // {
-    //     return $this->render('index/index.html.twig', [
-    //         'controller_name' => 'IndexController',
-    //     ]);
-    // }
-
-    #[Route('/', name: 'app_coming')]
-    public function coming(): Response
+    #[Route('/', name: 'app_index')]
+    public function index(): Response
     {
-        return $this->render('index/coming.html.twig', [
+        return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
         ]);
     }
+
+    // #[Route('/', name: 'app_coming')]
+    // public function coming(): Response
+    // {
+    //     return $this->render('index/coming.html.twig', [
+    //         'controller_name' => 'IndexController',
+    //     ]);
+    // }
 }
