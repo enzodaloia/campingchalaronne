@@ -5384,3 +5384,13 @@ Inverted responsive classes
         display: none;
     }
 }
+
+
+.menu-brand {
+    height: auto !important;
+}
+
+.menu-brand img {
+    max-height: 200px !important;
+    width: auto !important;
+}

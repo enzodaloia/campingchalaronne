@@ -1,0 +1,185 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camping Chalaronne - Coming Soon{% endblock %}
+
+{% block body %}
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: white;
+        color: #fff;
+    }
+
+    .comming {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .comming img.logo-img {
+        width: 250px;
+    }
+
+    .comming h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+
+    .comming p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        color: #ccc;
+    }
+
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .countdown .item {
+        border: 1px solid #333;
+        padding: 20px 15px;
+        border-radius: 8px;
+        min-width: 80px;
+    }
+
+    .countdown .item h3 {
+        font-size: 2em;
+        margin: 0;
+        color: #000;
+    }
+
+    .countdown .item h6 {
+        font-size: 0.9em;
+        margin-top: 5px;
+        letter-spacing: 1px;
+        color: #b87350; /* couleur marron */
+    }
+
+    .subscribe p {
+        margin-bottom: 15px;
+        color: #ccc;
+    }
+
+    .subscribe input[type="email"] {
+        padding: 10px;
+        width: 60%;
+        max-width: 300px;
+        border: 1px solid #333;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+        background: #ffffff;
+        color: #000;
+    }
+
+    .subscribe button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        background-color: #b87350;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .subscribe button:hover {
+        background-color: #9b5c3d;
+    }
+
+    @media (max-width: 768px) {
+        .countdown {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .countdown .item {
+            min-width: 60px;
+            padding: 15px 10px;
+        }
+        .subscribe input[type="email"] {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .subscribe button {
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+</style>
+
+<div class="comming">
+    <div>
+        <img src="{{ asset('assets/img/Logo_camping_chalaronne.png') }}" class="logo-img" alt="Logo Camping Chalaronne">
+        <h1>On arrive bientôt !</h1>
+        <p>Notre nouveau site est en construction !</p>
+
+        <div class="countdown">
+            <div class="item">
+                <h3 id="days">00</h3>
+                <h6>JOURS</h6>
+            </div>
+            <div class="item">
+                <h3 id="hours">00</h3>
+                <h6>HEURES</h6>
+            </div>
+            <div class="item">
+                <h3 id="minutes">00</h3>
+                <h6>MINUTES</h6>
+            </div>
+            <div class="item">
+                <h3 id="seconds">00</h3>
+                <h6>SECONDES</h6>
+            </div>
+        </div>
+
+        <div class="subscribe">
+            <p>Enregistrez-vous pour recevoir un mail le jour du lancement du site !</p>
+            <form>
+                <input type="email" name="email" placeholder="Email">
+                <button>Inscription</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const eventDate = new Date(2026, 3, 1, 0, 0, 0).getTime();
+
+        function countdown() {
+            const now = new Date().getTime();
+            const remTime = eventDate - now;
+
+            if (remTime <= 0) {
+                document.getElementById("days").textContent = 0;
+                document.getElementById("hours").textContent = 0;
+                document.getElementById("minutes").textContent = 0;
+                document.getElementById("seconds").textContent = 0;
+                return;
+            }
+
+            const days = Math.floor(remTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((remTime / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((remTime / (1000 * 60)) % 60);
+            const seconds = Math.floor((remTime / 1000) % 60);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        countdown();
+        setInterval(countdown, 1000);
+    });
+</script>
+{% endblock %}
