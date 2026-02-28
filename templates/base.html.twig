@@ -43,6 +43,7 @@
     </head>
     <body class="page-main">
         <div id="preloader"></div>
+        {% if app.user %}
         <nav class="menu-classic menu-fixed menu-transparent light align-right" data-menu-anima="fade-in">
             <div class="container">
                 <div class="menu-brand">
@@ -80,6 +81,7 @@
                 </div>
             </div>
         </nav>
+        {% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>
