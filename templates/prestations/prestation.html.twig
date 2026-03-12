@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Nos prestations{% endblock %}
 
 {% block body %}
 <main>
@@ -17,14 +17,30 @@
         <div class="container">
             <ul class="slider" data-options="type:carousel,arrows:true,controls:out,perView:4,perViewMd:3,perViewSm:2,perViewXs:1,gap:30">
                 {% set services = [
-                    {'icon':'fa-solid fa-cloud-sun','title':'Views','text':'Enjoy amazing and unique natural views.'},
-                    {'icon':'fa-solid fa-mug-hot','title':'Breakfast','text':'Take a break in our refuges and huts.'},
-                    {'icon':'fa-solid fa-shoe-prints','title':'Trekking','text':'Lots of refuges through the paths and treks.'},
-                    {'icon':'fa-solid fa-person-hiking','title':'Cable car','text':'Try the many panoramic cable cars.'}
+                    {
+                        icon: 'fa-solid fa-cloud-sun',
+                        title: 'Belle vue',
+                        text: 'Profitez d’une magnifique vue sur la Chalaronne et la nature environnante dans un cadre calme et verdoyant.'
+                    },
+                    {
+                        icon: 'fa-solid fa-mug-hot',
+                        title: 'Commodités à pied',
+                        text: 'Boulangerie, restaurants, commerces et cafés sont facilement accessibles à pied depuis le camping.'
+                    },
+                    {
+                        icon: 'fa-solid fa-shoe-prints',
+                        title: 'Balades',
+                        text: 'De nombreux chemins de promenade et pistes cyclables longent la rivière et traversent la campagne.'
+                    },
+                    {
+                        icon: 'fa-solid fa-person-hiking',
+                        title: 'Activités',
+                        text: 'Profitez de nombreuses activités : mini-golf, balades dans la nature, détente au bord de la rivière et possibilité d’emmener vos chevaux.'
+                    }
                 ] %}
                 {% for service in services %}
                     <li>
-                        <div class="cnt-box cnt-box-top-icon boxed">
+                        <div class="cnt-box cnt-box-top-icon boxed h-100">
                             <i class="{{ service.icon }}"></i>
                             <div class="caption">
                                 <h2>{{ service.title }}</h2>
@@ -157,23 +173,24 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="title">
-                                <h2>Lavarella Refuge</h2>
-                                <p>Civetta Mountain</p>
+                                <h2>Emplacements du camping</h2>
+                                <p>Venez découvrir nos emplacements</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunt utlabore et dolore magna aliqua.
-                                Utenim ad minim veniam quis nostrud exercitatio.
+                                Profitez d’emplacements spacieux et ombragés au bord de la Chalaronne, dans un cadre naturel calme et verdoyant.
+                                Idéal pour les tentes, caravanes et camping-cars, le camping offre un environnement agréable pour se détendre
+                                et profiter pleinement de la nature et des activités aux alentours.
                             </p>
                             <table class="table table-grid table-border align-left text-bold table-10">
                                 <tbody>
                                     <tr>
-                                        <td>Civetta Mountain</td>
-                                        <td>1850 m</td>
-                                        <td>$60 per night</td>
+                                        <td>Bord de la Chalaronne</td>
+                                        <td>Emplacements spacieux</td>
+                                        <td>À partir de 10 € / nuit</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="btn-sm btn-circle btn-border btn">View website</a>
+                            <a href="#" class="btn-sm btn-circle btn-border btn">Voir les informations</a>
                         </div>
                     </div>
                 </div>
@@ -223,23 +240,24 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="title">
-                                <h2>Lagazui Refuge</h2>
-                                <p>Monte Bianco Mountain</p>
+                                <h2>Emplacements Résidentiels</h2>
+                                <p>Profitez de nos emplacements résidentiels</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunt utlabore et dolore magna aliqua.
-                                Utenim ad minim veniam quis nostrud exercitatio.
+                                Nos emplacements résidentiels sont disponibles toute l'année pour les caravanes ou mobil-homes.
+                                Profitez d’un emplacement calme, bien entretenu, avec toutes les commodités à proximité.
+                                Idéal pour un séjour long terme, au bord de la Chalaronne, dans un cadre verdoyant et agréable.
                             </p>
                             <table class="table table-grid table-border align-left text-bold table-10">
                                 <tbody>
                                     <tr>
-                                        <td>Monte Bianco</td>
-                                        <td>2050 m</td>
-                                        <td>$80 per night</td>
+                                        <td>Bord de la Chalaronne</td>
+                                        <td>Emplacement résidentiel</td>
+                                        <td>À partir de 116 € / mois</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="btn-sm btn-circle btn-border btn">View website</a>
+                            <a href="#" class="btn-sm btn-circle btn-border btn">Voir les informations</a>
                         </div>
                     </div>
                 </div>
@@ -314,7 +332,7 @@
     </section>
 
     {# Section Counters #}
-    <section class="section-image light" data-parallax="scroll" data-bleed="100" data-image-src="http://via.placeholder.com/1920x1080">
+    {# <section class="section-image light" data-parallax="scroll" data-bleed="100" data-image-src="http://via.placeholder.com/1920x1080">
         <div class="container">
             <div class="row">
                 {% set counters = [
@@ -338,7 +356,7 @@
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </section> #}
 
 </main>
 {% endblock %}
