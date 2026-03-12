@@ -6,10 +6,10 @@
 <main>
 
     {# Hero Section avec image de fond et texte #}
-    <section class="section-image section-full-width-right light ken-burn-center" data-parallax="scroll" data-image-src="media/hd-10.jpg">
+    <section class="section-image section-full-width-right light ken-burn-center" data-parallax="scroll" data-image-src="{{ asset('assets/img/chalets/chalets.jpg') }}">
         <div class="container text-center" style="padding-top: 70vh;">
             <h1>Nos prestations</h1>
-            <h3>Travel to see what a tiny place you occupy in the world</h3>
+            {# <h3>Travel to see what a tiny place you occupy in the world</h3> #}
         </div>
     </section>
     <section>
@@ -67,41 +67,66 @@
                         <div class="col-lg-6">
                             <ul class="slider light" data-options="arrows:true,nav:true">
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="media/hd-8.jpg" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/chalets/chalet_chalaronne.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/chalets/chalet_chalaronne.jpg') }}" alt="">
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="media/hd-9.jpg" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/chalets/interieur_chalets.webp') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/chalets/interieur_chalets.webp') }}" alt="">
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="media/hd-10.jpg" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/chalets/chalets.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/chalets/chalets.jpg') }}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/chalets/all_chalets.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/chalets/all_chalets.jpg') }}" alt="">
                                     </a>
                                 </li>
                             </ul>
                             <hr class="space-xs" />
                             <ul class="slider light" data-options="type:carousel,arrows:true,perView:4">
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="http://via.placeholder.com/800x500" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/camping/arc.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/camping/arc.jpg') }}" alt="">
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="http://via.placeholder.com/800x500" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/camping/couche.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/camping/couhe.jpg') }}" alt="">
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="http://via.placeholder.com/800x500" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/camping/eau.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/camping/eau.jpg') }}" alt="">
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="img-box lightbox" href="http://via.placeholder.com/800x500" data-lightbox-anima="fade-in">
-                                        <img src="http://via.placeholder.com/800x500" alt="">
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/sanitaires/machines.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/sanitaires/machines.jpg') }}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/sanitaires/douche.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/sanitaires/douche.jpg') }}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/sanitaires/lavabo.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/sanitaires/lavabo.jpg') }}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/sanitaires/wc.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/sanitaires/wc.jpg') }}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="img-box lightbox" href="{{ asset('assets/img/sanitaires/wch.jpg') }}" data-lightbox-anima="fade-in">
+                                        <img src="{{ asset('assets/img/sanitaires/wch.jpg') }}" alt="">
                                     </a>
                                 </li>
                             </ul>
@@ -123,7 +148,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="btn-sm btn-circle btn-border btn">View website</a>
+                            {# <a href="#" class="btn-sm btn-circle btn-border btn">Réserver</a> #}
                         </div>
                     </div>
                 </div>
