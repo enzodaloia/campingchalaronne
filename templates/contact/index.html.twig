@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez nous !{% endblock %}
+
+{% block body %}
+<main>
+    <section class="section-base">
+        <div class="container">
+
+            <hr class="space" />
+
+            <iframe
+                src="https://www.google.com/maps?q=46.175263504163055,4.814278114512782&hl=fr&z=16&output=embed"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <hr class="space" />
+
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <div class="title">
+                        <h2>Écrivez-nous !</h2>
+                        <p>Contactez nous grâce à ce formulaire</p>
+                    </div>
+
+                    {# Messages Symfony #}
+
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                    {% for message in app.flashes('error') %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                    <form action="{{ path('app_send_message') }}" method="POST" class="form-box">
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <p>Nom</p>
+                                <input
+                                    id="nom"
+                                    name="nom"
+                                    placeholder="Votre nom"
+                                    type="text"
+                                    class="input-text"
+                                    value="{{ app.request.get('nom') }}"
+                                    required>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <p>Prénom</p>
+                                <input
+                                    id="prenom"
+                                    name="prenom"
+                                    placeholder="Votre prénom"
+                                    type="text"
+                                    class="input-text"
+                                    value="{{ app.request.get('prenom') }}"
+                                    required>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <p>Téléphone</p>
+                                <input
+                                    id="telephone"
+                                    name="telephone"
+                                    placeholder="Votre téléphone"
+                                    type="tel"
+                                    class="input-text"
+                                    value="{{ app.request.get('telephone') }}"
+                                    required>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <p>Email</p>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    placeholder="Votre email"
+                                    type="email"
+                                    class="input-text"
+                                    value="{{ app.request.get('email') }}"
+                                    required>
+                            </div>
+
+                        </div>
+
+                        <p>Message</p>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            class="input-textarea"
+                            placeholder="Écrivez votre message..."
+                            required>{{ app.request.get('message') }}</textarea>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="check" name="check" required>
+                            <label for="check">
+                                Vous acceptez les conditions d'utilisation et la politique de confidentialité
+                            </label>
+                        </div>
+
+                        <button class="btn btn-sm" type="submit">
+                            Envoyer le message
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="title">
+                        <h2>Contacts</h2>
+                        <p>Information</p>
+                    </div>
+
+                    <ul class="text-list text-list-line">
+
+                        <li>
+                            <b>Adresse</b>
+                            <hr />
+                            <p>159 rue des illards, 01140 Saint-Didier-sur-Chalaronne</p>
+                        </li>
+
+                        <li>
+                            <b>Restaurant</b>
+                            <hr />
+                            <p>
+                                <a href="https://restaurant-chez-sandrine.fr/" target="_blank">
+                                    restaurant-chez-sandrine.fr
+                                </a>
+                            </p>
+                        </li>
+
+                        <li>
+                            <b>Email</b>
+                            <hr />
+                            <p>campingchalaronne@orange.fr</p>
+                        </li>
+
+                        <li>
+                            <b>Téléphone</b>
+                            <hr />
+                            <p>04 74 02 56 14</p>
+                        </li>
+
+                    </ul>
+
+                    <hr class="space-sm" />
+
+                    <div class="icon-links icon-social icon-links-grid social-colors-hover">
+                        <a class="facebook"><i class="icon-facebook"></i></a>
+                        <a class="twitter"><i class="icon-twitter"></i></a>
+                        <a class="instagram"><i class="icon-instagram"></i></a>
+                        <a class="google"><i class="icon-google"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
