@@ -2,7 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Camping de la Chalaronne – Vacances au bord de l'eau à Saint-Didier-sur-Chalaronne{% endblock %}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="{% block meta_description %}Découvrez le Camping de la Chalaronne à Saint-Didier-sur-Chalaronne. Profitez d’emplacements spacieux, de mobil-homes et d’activités en plein air pour toute la famille.{% endblock %}">
+
+        <meta name="keywords" content="Camping de la Chalaronne, Camping Saint-Didier-sur-Chalaronne, Camping Ain, Vacances en camping Ain, Camping bord de l’eau Ain, Séjour famille camping Ain, Location mobil-home Ain, Emplacements camping Ain, Camping avec piscine Ain, Activités enfants camping Ain, Camping proche Bresse, Vacances nature Ain, Camping convivial pour famille, Randonnée et loisirs Ain, Séjour détente camping Ain, Location chalet camping Ain, Parc aquatique camping Ain, Animation enfants camping, Aire de jeux camping, Restaurant à côté du camping, Location tente / caravane, Équipements pour familles camping, Camping avec sanitaires modernes, Camping près de rivières et lacs, Camping dans l’Ain, Vacances Bresse Ain, Camping près de Lyon, Camping à 1h de Bourg-en-Bresse, Séjour nature Ain Rhône-Alpes">
+
+        <!-- Open Graph (Facebook / LinkedIn / WhatsApp) -->
+        <meta property="og:title" content="{% block og_title %}Camping de la Chalaronne – Vacances au bord de l'eau{% endblock %}">
+        <meta property="og:description" content="{% block og_description %}Profitez d’un séjour inoubliable au Camping de la Chalaronne à Saint-Didier-sur-Chalaronne. Emplacements spacieux et activités pour toute la famille.{% endblock %}">
+        <meta property="og:image" content="{% block og_image %}{{ asset('assets/img/logo/Logo_camping_chalaronne_dark.png') }}{% endblock %}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ app.request.uri }}">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{% block twitter_title %}Camping de la Chalaronne – Vacances au bord de l'eau{% endblock %}">
+        <meta name="twitter:description" content="{% block twitter_description %}Profitez d’un séjour inoubliable au Camping de la Chalaronne à Saint-Didier-sur-Chalaronne. Emplacements spacieux et activités pour toute la famille.{% endblock %}">
+        <meta name="twitter:image" content="{% block twitter_image %}{{ asset('assets/img/logo/Logo_camping_chalaronne_dark.png') }}{% endblock %}">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
             {# Theme CSS #}
