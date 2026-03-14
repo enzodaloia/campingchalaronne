@@ -46,8 +46,8 @@ final class ContactController extends AbstractController
         $email = (new Email())
             ->from('contact@camping-de-la-chalaronne.fr')
             ->replyTo($emailUser)
-            ->to('enzo73.daloia@gmail.com')
-            ->subject('Nouveau message du formulaire de contact')
+            ->to('campingchalaronne@orange.fr')
+            ->subject('Nouveau message du site du camping')
             ->text($texteMail);
 
         // Utilisation directe du transport OVH pour être sûr que ça marche
